@@ -4,8 +4,8 @@ author: Tommy Shen
 description: Implement Multi-Probe LSH algorithm
 
 date: 2023-05-12
-categories: [project]
-tags: [data science, machine learning]
+categories: [Project]
+tags: [Data Science, Machine Learning]
 layout: post
 ---
 
