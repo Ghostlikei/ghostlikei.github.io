@@ -1,3 +1,7 @@
+/**
+ * Setting up image lazy loading and LQIP switching
+ */
+
 const ATTR_DATA_SRC = 'data-src';
 const ATTR_DATA_LQIP = 'data-lqip';
 
