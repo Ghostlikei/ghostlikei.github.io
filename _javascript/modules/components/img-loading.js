@@ -47,11 +47,20 @@ export function loadImg() {
   });
 
   // Images loaded from the browser cache do not trigger the 'load' event
+  // This does not work at all
   document.querySelectorAll('article img[loading="lazy"]').forEach((img) => {
     if (img.complete) {
       removeCover.call(img, cover.SHIMMER);
     }
   });
+
+  // /* Stop shimmer when image loaded */ 
+  // document.addEventListener('lazyloaded', function (e) { 
+  //   const $img = $(e.target); 
+  //   $img.parent().removeClass('shimmer'); 
+  // });
+
+
 
   // LQIPs set by the data URI or WebP will not trigger the 'load' event,
   // so manually convert the URI to the URL of a high-resolution image.
