@@ -2,6 +2,8 @@
 title: Multi-Probe LSH for Mining Co-Author Relationship
 author: Tommy Shen
 description: Implement Multi-Probe LSH algorithm
+image:
+  path: ../assets/20230512MultiProbeLSH/title.png
 
 date: 2023-05-12
 categories: [Project]
