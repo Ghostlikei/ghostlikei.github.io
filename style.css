@@ -247,12 +247,11 @@ main.content {
 }
 
 .header-profile-picture {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: auto;          /* 4:5 portrait, shown whole rather than cropped */
     flex-shrink: 0;
     margin-right: 24px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 6px;
     background-color: var(--bg-elev);
 }
 
@@ -548,7 +547,7 @@ main.content {
 @media only screen and (max-width: 1150px) {
     body { font-size: 18px; }
     .header-div { flex-direction: column; align-items: center; text-align: center; }
-    .header-profile-picture { width: 150px; height: 150px; margin: 0 auto 14px; }
+    .header-profile-picture { width: 170px; height: auto; margin: 0 auto 14px; }
     .header-text { padding-top: 0; }
     .header-links { justify-content: center; margin-left: 0; }
 }
