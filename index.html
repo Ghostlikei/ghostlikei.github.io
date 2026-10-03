@@ -32,10 +32,11 @@
   var root = document.documentElement, KEY = "tommyshen-theme";
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function save(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
-  function isDark(t) { return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+  function isDark(t) { return t === "dark"; }            /* light is the default */
   function apply(t) {
-    if (t === "dark" || t === "light") { root.setAttribute("data-theme", t); } else { root.removeAttribute("data-theme"); }
-    var dark = isDark(t), meta = document.querySelector('meta[name="theme-color"]');
+    var theme = t === "dark" ? "dark" : "light";          /* always stamped, so the default is light */
+    root.setAttribute("data-theme", theme);
+    var dark = theme === "dark", meta = document.querySelector('meta[name="theme-color"]');
     if (meta) { meta.setAttribute("content", dark ? "#101418" : "#fdfdfd"); }
     document.querySelectorAll("[data-toggle-theme]").forEach(function (b) {
       b.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
@@ -47,7 +48,7 @@
     apply(read());
     document.querySelectorAll("[data-toggle-theme]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var next = isDark(root.getAttribute("data-theme")) ? "light" : "dark";
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         save(next); apply(next);
       });
     });
@@ -133,7 +134,7 @@
             <a href="https://www.linkedin.com/in/biwei-huang-5704b938/">Biwei Huang</a>&rsquo;s lab,
             where I&rsquo;m collaborating with and advised by
             <a href="https://fan-feng.com/">Fan Feng</a> (postdoc@UCSD/CMU) and
-            Caleb Chuck (postdoc@Princeton).
+            <a href="https://calcharles.github.io/">Caleb Chuck</a> (postdoc@Princeton).
             Previously, I received my bachelor&rsquo;s degree in Data Science from
             East China Normal University, Shanghai.
         </p>

@@ -5,6 +5,8 @@
    Layout adapted from the homepage of Nicklas Hansen (nicklashansen.com).
    ========================================================================== */
 
+/* Light is the default theme. Dark applies only when the visitor toggles it,
+   which stamps data-theme="dark" on <html> and persists in localStorage. */
 :root {
     color-scheme: light;
 
@@ -58,38 +60,6 @@
     --fs-small: 0.8667em;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        color-scheme: dark;
-        --bg:            #101418;
-        --bg-elev:       #171c22;
-        --text:          #c9d3dd;
-        --text-muted:    #98a4b1;
-        --heading:       #e2e9f0;
-        --rule:          #252d35;
-        --link:           #6fb4e8;
-        --link-hover:     #f4a94a;
-        --link-underline: rgba(111, 180, 232, 0.34);
-        --btn-hover-bg:   rgba(201, 211, 221, 0.10);
-        --hl-a:          #2b2340;
-        --hl-b:          #221c31;
-        --hl-edge:       #3a3054;
-        --hl-text:       #ded8ea;
-        --hl-muted:      #b0a6c6;
-        --hl-link:       #c9a6ee;
-        --hl-link-hover: #ddc6fb;
-        --hl-underline:  rgba(201, 166, 238, 0.36);
-        --hl-btn-bg:     rgba(201, 166, 238, 0.13);
-        --pill-bg:       #8a5fc0;
-        --pill-bg-hover: #7549ae;
-        --pill-fg:       #ffffff;
-        --fig-plate:     #ffffff;
-        --nav-bg:        rgba(16, 20, 24, 0.86);
-        --icon:          #c9d3dd;
-        --icon-hover:    #eaf1f7;
-        --focus:         #6fb4e8;
-    }
-}
 
 :root[data-theme="dark"] {
     color-scheme: dark;
@@ -311,10 +281,6 @@ main.content {
    even before (or without) the toggle script */
 .theme-toggle .icon-sun  { display: none; }
 .theme-toggle .icon-moon { display: block; }
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-toggle .icon-sun  { display: block; }
-    :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
-}
 :root[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
